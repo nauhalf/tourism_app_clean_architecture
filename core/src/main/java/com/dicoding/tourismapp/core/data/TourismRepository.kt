@@ -27,7 +27,7 @@ class TourismRepository @Inject constructor(
             }
 
             override fun shouldFetch(data: List<Tourism>?): Boolean =
-                data == null || data.isEmpty()
+                true
 
             override suspend fun createCall(): Flow<ApiResponse<List<TourismResponse>>> =
                 remoteDataSource.getAllTourism()
